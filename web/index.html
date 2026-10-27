@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>循证 — 文献与写作</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/trace-title-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/trace-ink-kai.woff2?v=1" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/trace-ink-running.woff2?v=1" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/trace-ink-grass.woff2?v=1" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/trace-ink-seal.woff2?v=1" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/experience.css">
+  <script src="/atmosphere.js" defer></script>
+  <script src="/browser-storage.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body class="landing-open studio-loading">
+  <div id="bootScreen" class="boot-screen" role="status" aria-live="polite">
+    <div class="boot-signature">
+      <div class="boot-book" aria-hidden="true"><span></span><span></span><i></i></div>
+      <p class="boot-name">循证<span>RESEARCH STUDIO</span></p>
+      <div class="boot-line" aria-hidden="true"><span></span></div>
+      <p id="bootStatus" class="boot-status">正在打开研究空间</p>
+      <button id="bootRetry" class="boot-retry" type="button" hidden>重新加载 ↗</button>
+    </div>
+  </div>
+  <canvas id="typeField" aria-hidden="true"></canvas>
+  <div class="ambient-shade" aria-hidden="true"></div>
+  <div id="cursorHalo" aria-hidden="true"><span></span></div>
+  <section id="opening" class="opening" aria-label="循证开场">
+    <div class="opening-top"><span class="opening-wordmark"><span class="opening-logo">循证</span><span class="opening-wordmark-en">RESEARCH STUDIO</span></span><button class="motion-control" id="motionToggle" aria-pressed="false">暂停动效</button></div>
+    <div class="opening-copy">
+      <p class="opening-english" lang="en">Every sentence. <span>A source.</span></p>
+      <h1 class="opening-title" aria-label="让每一句话，都有来处。">
+        <span class="title-line title-line--lead" aria-hidden="true"><span class="title-glyph">让</span><span class="title-glyph">每</span><span class="title-glyph">一</span><span class="title-glyph">句</span><span class="title-glyph">话</span><span class="title-punctuation">，</span></span>
+        <span class="title-line title-line--focus" aria-hidden="true"><span class="title-glyph">都</span><span class="title-glyph">有</span><span class="title-glyph">来</span><span class="title-glyph">处</span></span>
+      </h1>
+    </div>
+    <div class="opening-bottom"><span>文献 · 洞见 · 写作</span><button id="enterStudio" class="opening-coordinate" type="button" aria-label="进入研究空间" title="向下滚动，进入研究空间"><span aria-hidden="true">↓</span></button><span>循文见知</span></div>
+  </section>
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-7-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Zm0 0v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Zm-5 10 3 3 7-7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6ZM20 2v4m-2-2h4"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+  </defs></svg>
+  <div class="app-shell" id="studioShell" inert aria-busy="true">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="循证首页"><span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-book"/></svg></span><strong>循证</strong></a>
+      <nav class="main-nav" aria-label="主导航">
+        <button class="nav-item active" data-view="workspace">写作</button>
+        <button class="nav-item" data-view="sources">文献<span id="navSourceCount" class="nav-count">0</span></button>
+        <button class="nav-item" data-view="ledger">账本</button>
+      </nav>
+      <div class="header-actions"><button id="replayOpening" class="text-button" title="重播开场" aria-label="重播开场">字海</button>
+        <details class="project-menu"><summary aria-label="项目菜单" title="项目菜单">···</summary><div class="menu-popover"><button id="restoreButton">打开项目</button><button id="demoButton" data-mutation>打开示例</button></div></details>
+        <button id="settingsButton" class="icon-button" title="模型设置" aria-label="模型设置"><svg class="icon"><use href="#i-settings"/></svg></button>
+        <button class="button export-button" id="exportButton" aria-label="导出综述"><svg class="icon"><use href="#i-download"/></svg><span>导出</span></button>
+      </div>
+    </header>
+    <div class="studio-layout">
+    <aside class="conversation-rail" aria-label="研究会话">
+      <div class="rail-label">研究空间 <span>WORKSPACE</span></div>
+      <button id="createThread" class="new-thread"><svg class="icon"><use href="#i-plus"/></svg>新的研究<span>↗</span></button>
+      <div class="rail-section-title">我的会话 <span id="localStorageStatus" class="local-storage-status" hidden title="文献、对话和稿件保存在当前浏览器。清除站点数据会删除这些内容，请使用导出备份。">本机保存</span></div>
+      <div id="threadList" class="thread-list"></div>
+      <div class="rail-footer"><span class="rail-orbit">循</span><button id="ambientToggle" class="text-button" aria-pressed="false">暂停背景</button></div>
+    </aside>
+    <main class="main">
+      <div class="main-content">
+        <section class="page-heading"><h1 id="pageTitle">写作</h1></section>
+        <div id="viewContent"></div>
+      </div>
+    </main>
+    </div>
+  </div>
+  <input type="file" id="fileInput" accept=".pdf,.txt,.md" multiple hidden>
+  <input type="file" id="ledgerInput" accept=".json" hidden>
+  <dialog id="settingsDialog" class="modal"><form id="settingsForm">
+    <div class="modal-header"><div><h2>模型连接</h2></div><button type="button" class="icon-button close-dialog" aria-label="关闭模型设置"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <label class="field-label" for="apiBase">API 基础地址</label><input id="apiBase" placeholder="https://api.deepseek.com" autocomplete="off">
+    <label class="field-label" for="apiModel">模型名称</label><input id="apiModel" placeholder="deepseek-flash" autocomplete="off">
+    <label class="field-label" for="apiKey">API Key <span id="keyHint"></span></label><input id="apiKey" type="password" placeholder="留空保留现有密钥" autocomplete="new-password">
+    <p id="visitorKeyNote" class="visitor-key-note" hidden>使用你自己的 DeepSeek Key，费用由你的 DeepSeek 账户承担。密钥仅保留在服务器内存中，重启后需重新填写。</p>
+    <label class="checkbox-label"><input type="checkbox" id="persistConfig" checked>在本机加密保存</label>
+    <label class="checkbox-label"><input type="checkbox" id="clearKey">清除现有密钥</label>
+    <div id="connectionResult" class="connection-result" role="status" hidden></div>
+    <div class="modal-actions"><button type="button" class="button secondary" id="testConnection">测试连接</button><button type="submit" class="button primary" id="saveSettings">保存设置</button></div>
+  </form></dialog>
+  <dialog id="sourceDialog" class="modal source-modal" aria-labelledby="sourceTitle">
+    <div class="modal-header"><h2 id="sourceTitle">文献原文</h2><button type="button" class="icon-button close-dialog source-close" aria-label="关闭原文" autofocus><svg class="icon"><use href="#i-close"/></svg><span>关闭</span></button></div>
+    <div class="source-reader-controls"><span id="sourcePageCount"></span><label><input type="checkbox" id="readerPreserveLines">保留原文换行</label></div>
+    <div id="sourceReader" tabindex="0" role="region" aria-label="文献正文"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

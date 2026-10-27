@@ -1,0 +1,28 @@
+Trace Title Serif is a title-only subset of Noto Serif SC.
+© 2017-2023 Adobe (http://www.adobe.com/).
+Modified for this project: glyph subset, WOFF2 format, renamed family.
+Licensed under SIL Open Font License 1.1; see OFL.txt.
+
+Trace Ink Kai: glyph subset of Ma Shan Zheng.
+Copyright 2018 The Ma Shan Zheng Project Authors.
+See OFL-mashanzheng.txt.
+
+Trace Ink Running: glyph subset of Zhi Mang Xing.
+See OFL-zhimangxing.txt for copyright and license.
+
+Trace Ink Grass: glyph subset of Liu Jian Mao Cao.
+Copyright 2018 The Liu Jian Mao Cao Project Authors.
+See OFL-liujianmaocao.txt.
+
+Trace Ink Display: glyph subset of ZCOOL XiaoWei.
+See OFL-zcoolxiaowei.txt for copyright and license.
+
+All four background fonts are modified: glyph subset, WOFF2 format and renamed family.
+The complete license and upstream copyright notices are bundled alongside each font.
+Source URLs and SHA-256 values: ink-manifest.json.
+Rebuild: python scripts/build_ink_fonts.py (requires fontTools and Brotli).
+
+Trace Title Sans is a title-only subset of Noto Sans SC.
+© 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+Modified for this project: glyph subset, WOFF2 format, renamed family.
+Licensed under SIL Open Font License 1.1; see OFL.txt.

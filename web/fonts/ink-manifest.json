@@ -1,0 +1,34 @@
+[
+  {
+    "file": "trace-ink-kai.woff2",
+    "family": "Trace Ink Kai",
+    "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+    "source_sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+    "glyphs": 68,
+    "bytes": 27640
+  },
+  {
+    "file": "trace-ink-running.woff2",
+    "family": "Trace Ink Running",
+    "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+    "source_sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969",
+    "glyphs": 68,
+    "bytes": 20660
+  },
+  {
+    "file": "trace-ink-grass.woff2",
+    "family": "Trace Ink Grass",
+    "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/liujianmaocao/LiuJianMaoCao-Regular.ttf",
+    "source_sha256": "cab396b91a5b7c0b4005a35891180d06e6751f5ac261fe680aec65c1ae209033",
+    "glyphs": 68,
+    "bytes": 20668
+  },
+  {
+    "file": "trace-ink-seal.woff2",
+    "family": "Trace Ink Display",
+    "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+    "source_sha256": "a42b620140f493db42f741351dfbf343c0936d58588ee8004b8b2a218d997ff1",
+    "glyphs": 68,
+    "bytes": 25800
+  }
+]
